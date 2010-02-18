@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Unicons - Readme</title>
+    <link rel="stylesheet" href="css/unicons.css" type="text/css" media="screen" charset="utf-8">
+    <script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/unicons.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            font-family: Helvetica;
+        }
+        h1 {
+            font-size: 20px;
+        }
+        h2 {
+            font-size: 18px;
+        }
+        p {
+            font-size: 16px;
+        }
+        textarea {
+            padding: 2px;
+            margin: 0;
+            font-size: 18px;
+        }
+        pre {
+            margin: 0 3em;
+            font-size: 11px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="http://github.com/bradchoate/unicons"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub" /></a>
+
+    <h1>Unicons</h1>
+
+    <p>For times when you can't insert images into your posts, you can insert
+    Unicons!</p>
+
+    <p>Use this on Twitter, TypePad, Tumblr... pretty much any text field on
+    the web that accepts unicode characters.</p>
+
+    <h2>Usage</h2>
+
+    <p>For your own site, you can attach the minimal Unicon control UI by
+    referencing the Unicons CSS stylesheet and the JavaScript files and
+    jQuery, which can be loaded locally or (as shown) from Google: </p>
+
+    <pre>&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/unicons.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; charset=&quot;utf-8&quot;&gt;
+&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;js/unicons.js&quot;&gt;&lt;/script&gt;</pre>
+
+    <p>This will cause all <code>textarea</code> controls on the page to be
+    modified. To specifically exclude certain controls, add a "no-unicons" CSS
+    class to the <code>textarea</code> tag.</p>
+
+    <h2>Bookmarklet</h2>
+
+    <p>To install, drag and drop this link to your bookmarks bar: 
+
+    <a href="javascript:void(function()%20{if%20(document.characterSet%20!=%20%27UTF-8%27)%20{if%20(!confirm(%22This%20document%20doesn%27t%20appear%20to%20support%20Unicode%20(character%20set%20is%20%27%22%20+%20document.characterSet%20+%20%22%27).%20Continue%20anyway?%22))%20{return;}}function%20insertAtCaret(txtarea,%20text)%20{var%20scrollPos%20=%20txtarea.scrollTop;var%20strPos%20=%200;var%20br%20=%20((txtarea.selectionStart%20||%20txtarea.selectionStart%20==%20%270%27)%20?%22ff%22%20:%20(document.selection%20?%20%22ie%22%20:%20false%20)%20);if%20(br%20==%20%22ie%22)%20{txtarea.focus();var%20range%20=%20document.selection.createRange();range.moveStart%20(%27character%27,%20-txtarea.value.length);strPos%20=%20range.text.length;}else%20if%20(br%20==%20%22ff%22)strPos%20=%20txtarea.selectionStart;var%20front%20=%20(txtarea.value).substring(0,strPos);var%20back%20=%20(txtarea.value).substring(strPos,txtarea.value.length);txtarea.value%20=%20front%20+%20text%20+%20back;strPos%20=%20strPos%20+%20text.length;if%20(br%20==%20%22ie%22)%20{txtarea.focus();var%20range%20=%20document.selection.createRange();range.moveStart%20(%27character%27,%20-txtarea.value.length);range.moveStart%20(%27character%27,%20strPos);range.moveEnd%20(%27character%27,%200);range.select();}else%20if%20(br%20==%20%22ff%22)%20{txtarea.selectionStart%20=%20strPos;txtarea.selectionEnd%20=%20strPos;txtarea.focus();}txtarea.scrollTop%20=%20scrollPos;}window.unicon_insert%20=%20function(ev,%20ch)%20{var%20txt%20=%20jQuery(ev.target).closest(%22.unicons-textarea-wrap%22).children(%22textarea%22).get(0);insertAtCaret(txt,%20ch);return%20false;};var%20unicons%20=%20function()%20{var%20unicon_table%20=%20[%22%E2%9D%9D%22,%20%22%E2%9D%9E%22,%20%22%E2%98%83%22,%20%22%E2%99%A5%22,%20%22%E2%9D%A4%22,%20%22%E2%99%A0%22,%20%22%E2%99%A6%22,%20%22%E2%99%A3%22,%20%22%E2%98%99%22,%20%22%E2%9D%A7%22,%20%22%E2%9D%A6%22,%20%22%E2%9C%8C%22,%20%22%E2%98%BA%22,%22%E2%98%B9%22,%20%22%E2%98%8E%22,%20%22%E2%98%91%22,%20%22%E2%9C%94%22,%20%22%E2%9C%84%22,%20%22%E2%9C%8E%22,%20%22%E2%98%AE%22,%20%22%E2%98%85%22,%20%22%E2%98%86%22,%20%22%E2%98%81%22,%20%22%E2%98%82%22,%20%22%E2%98%94%22,%20%22%E2%98%92%22,%22%E2%9C%82%22,%20%22%E2%9C%88%22,%20%22%E2%98%95%22,%20%22%E2%8C%9A%22,%20%22%E2%8C%9B%22,%20%22%E2%99%AA%22,%20%22%E2%99%AB%22,%20%22%E2%9A%A0%22,%20%22%E2%9C%BF%22,%20%22%E2%9D%84%22,%20%22%E2%9C%B0%22,%20%22%E2%99%94%22,%20%22%E2%99%95%22,%22%E2%99%96%22,%20%22%E2%99%97%22,%20%22%E2%99%98%22,%20%22%E2%99%99%22,%20%22%E2%99%9A%22,%20%22%E2%99%9B%22,%20%22%E2%99%9C%22,%20%22%E2%99%9D%22,%20%22%E2%99%9E%22,%20%22%E2%99%9F%22,%20%22%E2%9A%90%22,%20%22%E2%9A%91%22];var%20unicon_markup%20=%20%27%3Cdiv%20class=%22unicons-ui%22%3E%3Cdiv%20class=%22unicons-toggle%22%3E%E2%98%BA%3C/div%3E%3Cdiv%20class=%22unicons-frame%22%3E%3Cul%20class=%22unicons-table%22%3E%27;for%20(var%20i%20=%200,%20ii%20=%20unicon_table.length;%20i%20%3C%20ii;%20i++)%20{var%20ch%20=%20unicon_table[i];unicon_markup%20+=%20%27%3Cli%3E%3Ca%20href=%22#%22%20onclick=%22return%20unicon_insert(event,%20\%27%27%20+ch%20+%20%27\%27)%22%3E%27%20+%20ch%20+%20%27%3C/a%3E%3C/li%3E%27;}unicon_markup%20+=%20%27%3C/ul%3E%3C/div%3E%3C/div%3E%27;jQuery(%22textarea%22).each(function()%20{jQuery(this).wrap(%27%3Cdiv%20class=%22unicons-textarea-wrap%22/%3E%27);});jQuery(%22.unicons-textarea-wrap%22).each(function()%20{jQuery(this).prepend(unicon_markup);});};var%20css%20=%20document.createElement(%27style%27);var%20css_rules%20=%20%27.unicons-textarea-wrap%20{position:%20relative;display:%20inline-block;}\n.unicons-textarea-wrap:after%20{display:%20block;content:%20%22%20%22;visibility:%20hidden;clear:%20both;height:%200.1px;font-size:%200.1em;line-height:%200;}\n.unicons-textarea-wrap:hover%20.unicons-toggle%20{display:%20block;}\n.unicons-toggle%20{text-align:center;font-size:%2016px;display:%20none;position:%20absolute;top:%200;right:%200;background-color:%20#000;color:%20#fff;width:%2018px;margin:%200;padding:%203px;opacity:%200.5;-moz-opacity:%200.5;filter:alpha(opacity=50);}\n.unicons-ui:hover%20.unicons-toggle%20{display:%20none;}\n.unicons-ui:hover%20.unicons-frame%20{display:%20block;}\n.unicons-frame%20{display:%20none;background-color:%20#ccc;width:%2075%;top:%200;right:%200;position:%20absolute;}\n.unicons-table%20{margin:%200;padding:%200;font-size:%2020px;}\n.unicons-table%20li%20{display:%20inline;list-style:%20none;margin:%200;padding:%200;}\n.unicons-table%20a%20{display:%20inline-block;text-align:%20center;width:%2020px;margin:%200;padding:%205px;}\n.unicons-table%20a,.unicons-table%20a:visited,.unicons-table%20a:link%20{text-decoration:%20none;color:%20#000;}\n.unicons-table%20a:hover%20{background-color:%20#000;color:%20#fff;}%27;if%20(document.all){css.innerText%20=%20css_rules;}else{css.textContent%20=%20css_rules;}var%20head%20=%20document.getElementsByTagName(%27head%27)[0];head.appendChild(css);if%20(!%20window.jQuery)%20{var%20s%20=%20document.createElement(%27script%27);s.src%20=%20%27http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js%27;head.appendChild(s);s.onload%20=%20unicons;}else%20{unicons();}}%20())">Unicons</a></p>
+
+    <h2>Demo</h2>
+
+    <p>Move your mouse over the textarea below to reveal the Unicons
+    control.</p>
+
+    <form>
+        <textarea rows="5" cols="60"></textarea>
+    </form>
+
+    <h2>Support</h2>
+
+    <p>If you have any issues to report, please submit them to the <a
+    href="http://github.com/bradchoate/unicons/issues">GitHub issues
+    tracker</a> for this project.</p>
+
+    <h2>License</h2>
+
+    <p>This code is available under the BSD license.</p>
+
+</body>
+</html>
