@@ -45,7 +45,7 @@ void(function() {
     }
 
     window.unicon_insert = function(ev, ch) {
-        var txt = jQuery(ev.target).closest(".unicons-textarea-wrap").children("textarea").get(0);
+        var txt = jQuery(ev.target).parents(".unicons-textarea-wrap").children("textarea").get(0);
         insertAtCaret(txt, ch);
         return false;
     };

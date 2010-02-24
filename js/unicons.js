@@ -69,7 +69,7 @@ function insertAtCaret(txtarea, text) {
 }
 
 function unicon_insert(ev, ch) {
-    var txt = $(ev.target).closest(".unicons-textarea-wrap").children("textarea").get(0);
+    var txt = $(ev.target).parents(".unicons-textarea-wrap").children("textarea").get(0);
     insertAtCaret(txt, ch);
     return false;
 }
